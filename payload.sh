@@ -7,7 +7,7 @@
 # kifoya. Internet kerak.
 # ============================================
 
-REPO="https://github.com/Xolericuz/matrix-motivation"
+REPO="https://github.com/xolerc/matrix-motivation"
 BRANCH="main"
 DIR="$HOME/matrix-motivation"
 GREEN='\033[32m'; RED='\033[31m'; NC='\033[0m'

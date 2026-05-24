@@ -123,7 +123,7 @@ function detectTermux() {
     document.getElementById('steps').innerHTML=
       '<div class="step"><span class="step-num">⚠</span><span>Bu sahifa faqat Android + Termux uchun</span></div>'+
       '<div class="step"><span class="step-num">1</span><span>Telefoningizga <b>Termux</b> o\'rnating</span></div>'+
-      '<div class="step"><span class="step-num">2</span><span>Termuxni ochib: <b style="color:#0f0">pkg install git -y && git clone https://github.com/Xolericuz/matrix-motivation && cd matrix-motivation && bash install.sh</b></span></div>';
+      '<div class="step"><span class="step-num">2</span><span>Termuxni ochib: <b style="color:#0f0">pkg install git -y && git clone https://github.com/xolerc/matrix-motivation && cd matrix-motivation && bash install.sh</b></span></div>';
     termuxBtn.style.display='block';
     termuxBtn.href='https://f-droid.org/packages/com.termux/';
     document.getElementById('installBtn').textContent='TERMUX O\'RNATISH';
@@ -147,7 +147,7 @@ function installVirus() {
       'Termux ochilmoqda...<br><br>'+
       '<span style="font-size:11px;opacity:0.7">Agar Termux ochilmasa, qo\'lda bajaring:<br><br>'+
       '<b style="color:#0f0">pkg install git -y<br>'+
-      'git clone https://github.com/Xolericuz/matrix-motivation<br>'+
+      'git clone https://github.com/xolerc/matrix-motivation<br>'+
       'cd matrix-motivation<br>'+
       'bash install.sh</b></span>';
 
@@ -189,7 +189,7 @@ function dlScript() {
 
 // Let user copy command
 function copyCmd() {
-  const cmd = 'pkg install git -y && git clone https://github.com/Xolericuz/matrix-motivation && cd matrix-motivation && bash install.sh';
+  const cmd = 'pkg install git -y && git clone https://github.com/xolerc/matrix-motivation && cd matrix-motivation && bash install.sh';
   if (navigator.clipboard) {
     navigator.clipboard.writeText(cmd);
     document.getElementById('statusText').textContent = 'Copied!';
