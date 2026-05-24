@@ -87,9 +87,7 @@ class NotificationService {
       playSound: true,
       fullScreenIntent: true,
       visibility: NotificationVisibility.public,
-      showOnLockScreen: true,
       category: AndroidNotificationCategory.alarm,
-      actions: <AndroidNotificationAction>[],
     );
 
     const iosDetails = DarwinNotificationDetails(
