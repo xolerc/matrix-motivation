@@ -1,9 +1,12 @@
-name: Build APK
+name: Build & Release APK
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -35,13 +38,31 @@ jobs:
           MANIFEST="android/app/src/main/AndroidManifest.xml"
           PERMS='    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>\n    <uses-permission android:name="android.permission.VIBRATE"/>\n    <uses-permission android:name="android.permission.WAKE_LOCK"/>\n    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>\n    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>\n    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>\n    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>\n    '
           sed -i "s|    <application|$PERMS    <application|" "$MANIFEST"
-          sed -i 's|android:hardwareAccelerated="true">|android:hardwareAccelerated="true" android:showWhenLocked="true" android:showOnLockScreen="true" android:turnScreenOn="true">|' "$MANIFEST"
+          sed -i 's|android:hardwareAccelerated="true">|android:hardwareAccelerated="true" android:showWhenLocked="true" android:showOnLockScreen="true" android:turnScreenOn="true">' "$MANIFEST"
 
       - name: Build APK
         run: flutter build apk --release
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - name: Sign APK
+        run: |
+          APK="build/app/outputs/flutter-apk/app-release.apk"
+          if [ -f "$APK" ]; then
+            mv "$APK" "MatrixMotivation-v1.0.apk"
+          fi
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: matrix-motivation-apk
-          path: build/app/outputs/flutter-apk/*.apk
+          tag_name: v1.0.${{ github.run_number }}
+          name: Matrix Motivation v1.0.${{ github.run_number }}
+          body: |
+            ## MATRIX MOTIVATION APK
+            
+            - Avtomatik build
+            - Bloklangan ekranda notification
+            - Matrix rain effekt
+            - 48 ta o'zbekcha motivatsion xabarlar
+            
+            Yuklab olish uchun pastdagi .apk faylni bosing.
+          files: MatrixMotivation-v1.0.apk
+          generate_release_notes: false
