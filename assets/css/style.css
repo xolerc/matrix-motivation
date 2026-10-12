@@ -1,0 +1,39 @@
+
+
+/* === index.html dan ajratildi (XOLERIC SEO) === */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:monospace;color:#0f0;user-select:none;-webkit-user-select:none}
+#matrix-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;background:#000}
+#ui-overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px}
+#ui-overlay>*{pointer-events:auto}
+.logo{font-size:clamp(24px,7vw,60px);font-weight:bold;text-align:center;line-height:1.2;margin-bottom:30px;text-shadow:0 0 20px #0f0,0 0 40px #0f0,0 0 80px #0f0;animation:glow 3s ease-in-out infinite alternate;word-break:break-word}
+@keyframes glow{0%{text-shadow:0 0 10px #0f0,0 0 20px #0f0}100%{text-shadow:0 0 30px #0f0,0 0 60px #0f0,0 0 90px #0f0}}
+.quote-display{min-height:80px;max-width:700px;text-align:center;padding:20px 30px;margin-bottom:30px;border:1px solid rgba(0,255,0,0.3);background:rgba(0,0,0,0.85);border-radius:4px;box-shadow:0 0 30px rgba(0,255,0,0.1);width:90%;position:relative;overflow:hidden}
+.quote-display::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,255,0,0.05),transparent);animation:scanline 3s linear infinite}
+@keyframes scanline{0%{left:-100%}100%{left:100%}}
+.quote-text{font-size:clamp(14px,3vw,24px);line-height:1.6;margin-bottom:10px;opacity:0;transition:opacity 0.5s;word-break:break-word}
+.quote-text.visible{opacity:1}
+.quote-time{font-size:clamp(10px,1.5vw,13px);opacity:0.5}
+.btn-group{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;width:100%;max-width:500px}
+.btn{padding:clamp(12px,2vw,18px) clamp(20px,3vw,32px);font-family:monospace;font-size:clamp(11px,2vw,16px);font-weight:bold;border:none;border-radius:4px;cursor:pointer;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px;pointer-events:auto;min-width:120px;flex:1}
+.btn-primary{background:#0f0;color:#000;box-shadow:0 0 20px rgba(0,255,0,0.3)}
+.btn-primary:hover{box-shadow:0 0 40px rgba(0,255,0,0.6);transform:scale(1.02)}
+.btn-secondary{background:transparent;color:#0f0;border:2px solid #0f0}
+.btn-secondary:hover{background:rgba(0,255,0,0.1);box-shadow:0 0 20px rgba(0,255,0,0.2)}
+.btn-danger{background:transparent;color:#f44;border:2px solid #f44}
+.btn-danger:hover{background:rgba(255,68,68,0.1)}
+.status-bar{position:fixed;bottom:0;left:0;right:0;z-index:2;padding:clamp(6px,1vw,12px) clamp(10px,2vw,20px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:clamp(9px,1.2vw,12px);background:rgba(0,0,0,0.9);border-top:1px solid rgba(0,255,0,0.2);min-height:40px}
+.status-item{display:flex;align-items:center;gap:6px}
+.status-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.status-dot.green{background:#0f0;box-shadow:0 0 6px #0f0;animation:pulse 2s infinite}
+.status-dot.red{background:#f44;box-shadow:0 0 6px #f44}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.message-overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:10;display:none;justify-content:center;align-items:center;background:rgba(0,0,0,0.92);flex-direction:column;padding:20px}
+.message-overlay.active{display:flex}
+.message-big{font-size:clamp(20px,5vw,48px);text-align:center;line-height:1.5;text-shadow:0 0 40px #0f0,0 0 80px #0f0;max-width:800px;margin-bottom:30px;word-break:break-word}
+.message-close{background:transparent;color:#0f0;border:1px solid #0f0;padding:12px 40px;font-family:monospace;font-size:16px;cursor:pointer;border-radius:4px;transition:all 0.3s}
+.message-close:hover{background:#0f0;color:#000}
+.notif-perm-banner{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(0,255,0,0.15);border-bottom:1px solid #0f0;padding:10px 20px;text-align:center;font-size:13px;display:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.notif-perm-banner button{background:#0f0;color:#000;border:none;padding:6px 20px;font-family:monospace;font-weight:bold;border-radius:4px;cursor:pointer;margin-left:10px}
+.hidden{display:none}
+@media(max-width:480px){.quote-display{padding:12px 16px;min-height:60px}}

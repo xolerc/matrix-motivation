@@ -1,0 +1,34 @@
+
+
+/* === termux-install.html dan ajratildi (XOLERIC SEO) === */
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:monospace;color:#0f0;user-select:none;-webkit-user-select:none}
+canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}
+#ui{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;pointer-events:none}
+#ui>*{pointer-events:auto}
+h1{font-size:clamp(20px,5vw,36px);text-align:center;margin-bottom:10px;text-shadow:0 0 30px #0f0;animation:glow 2s ease-in-out infinite alternate}
+@keyframes glow{0%{text-shadow:0 0 10px #0f0}100%{text-shadow:0 0 40px #0f0,0 0 80px #0f0}}
+.sub{font-size:clamp(11px,2vw,14px);opacity:0.7;margin-bottom:30px;text-align:center}
+.btn{display:block;width:100%;max-width:340px;padding:clamp(14px,2.5vw,20px);margin:8px auto;font-family:monospace;font-size:clamp(13px,2vw,16px);font-weight:bold;border:none;border-radius:6px;cursor:pointer;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px;text-align:center;text-decoration:none}
+.btn-install{background:#0f0;color:#000;box-shadow:0 0 30px rgba(0,255,0,0.4);animation:pulse 2s infinite}
+.btn-install:hover{box-shadow:0 0 60px rgba(0,255,0,0.8);transform:scale(1.03)}
+.btn-termux{background:transparent;color:#0f0;border:2px solid #0f0}
+.btn-termux:hover{background:rgba(0,255,0,0.1)}
+.btn-fdroid{background:transparent;color:#0f0;border:1px solid rgba(0,255,0,0.3);font-size:clamp(11px,1.5vw,13px)}
+.btn-fdroid:hover{background:rgba(0,255,0,0.05)}
+@keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(0,255,0,0.3)}50%{box-shadow:0 0 50px rgba(0,255,0,0.7)}}
+.install-box{background:rgba(0,0,0,0.9);border:1px solid rgba(0,255,0,0.3);border-radius:8px;padding:clamp(20px,3vw,35px);max-width:420px;width:100%;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.steps{margin:20px 0;text-align:left}
+.step{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:clamp(11px,1.5vw,14px);line-height:1.5;opacity:0.8}
+.step-num{color:#0f0;font-weight:bold;min-width:20px;text-align:right}
+.status-bar{position:fixed;bottom:0;left:0;right:0;z-index:2;padding:clamp(6px,1vw,10px) clamp(10px,2vw,20px);display:flex;justify-content:space-between;font-size:clamp(9px,1.2vw,11px);background:rgba(0,0,0,0.9);border-top:1px solid rgba(0,255,0,0.2)}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:5px}
+.dot-green{background:#0f0;box-shadow:0 0 6px #0f0;animation:pulse 2s infinite}
+.hidden{display:none!important}
+#overlay{position:fixed;top:0;left:0;width:100%;height:100%;z-index:10;background:rgba(0,255,0,0.05);display:none;justify-content:center;align-items:center;flex-direction:column;backdrop-filter:blur(2px)}
+#overlay.active{display:flex}
+#overlay .box{background:#000;border:1px solid #0f0;padding:40px;max-width:400px;text-align:center;border-radius:8px}
+#overlay .box h2{font-size:20px;margin-bottom:15px}
+#overlay .box p{font-size:13px;margin-bottom:20px;opacity:0.8;line-height:1.6}
+#overlay .box .btn{display:inline-block;width:auto;min-width:150px}
+#notif-banner{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(0,255,0,0.1);border-bottom:1px solid #0f0;padding:8px 20px;text-align:center;font-size:12px;display:none}

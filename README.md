@@ -23,3 +23,6 @@ git clone https://github.com/xolerc/matrix-motivation
 cd matrix-motivation
 bash install.sh
 ```
+
+## 🔗 Rasmiy portfolio
+Barcha XOLERIC loyihalari: **https://xolerc.github.io/mydrime/**
